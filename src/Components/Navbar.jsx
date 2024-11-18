@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/Zone.png";
 import { Link, NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { RiMenu4Fill } from "react-icons/ri";
+import { AuthContext } from "../Provider/AuthProvider";
+
 const Navbar = () => {
+  const { handleSignOut, user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+
+  const SignOutUser = () => {
+    handleSignOut()
+      .then(() => console.log("Sign out"))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="shadow-md">
@@ -53,14 +62,33 @@ const Navbar = () => {
         </nav>
         <div className="flex items-center gap-2">
           <div>
-            <FaUserCircle className="text-3xl" />
+            {user && user ? (
+              <figure className="w-8 h-8 rounded-full p-0.5 border border-primary">
+                <img
+                  className="w-full h-full rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </figure>
+            ) : (
+              <FaUserCircle className="text-3xl" />
+            )}
           </div>
-          <Link
-            to="/auth/login"
-            className="btn btn-sm md:btn-md bg-primary text-white "
-          >
-            Login
-          </Link>
+          {user && user ? (
+            <button
+              onClick={SignOutUser}
+              className="btn btn-sm md:btn-md bg-red-400 text-white "
+            >
+              Log out
+            </button>
+          ) : (
+            <Link
+              to="/auth/login"
+              className="btn btn-sm md:btn-md bg-primary text-white "
+            >
+              Login
+            </Link>
+          )}
           <button
             onClick={() => {
               setOpen(!open);

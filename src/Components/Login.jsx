@@ -1,12 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const { handleSignIn, setUser, user, handleSignInWithGoogle } =
+    useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const pass = e.target.pass.value;
+    setError("");
+    handleSignIn(email, pass)
+      .then((result) => {
+        setUser(result.user);
+        navigate("/");
+      })
+      .catch(() => setError("Invalid email or password"));
+  };
+
+  const signInWithGoogleLogin = () => {
+    handleSignInWithGoogle()
+      .then((result) => {
+        setUser(result.user);
+        navigate("/");
+      })
+      .catch((error) => setError(error));
   };
 
   return (
@@ -39,6 +63,7 @@ const Login = () => {
               required
             />
           </div>
+          {error && <p className="text-red-500 text-sm">{error} </p>}
           <div className="flex items-center mb-4 gap-2">
             <input
               onClick={() => setShowPass(!showPass)}
@@ -48,9 +73,16 @@ const Login = () => {
 
             <p className="text-sm">Show password</p>
           </div>
-          <div className="form-control">
+          <div className="form-control space-y-2">
             <button className="btn bg-primary text-white rounded-none">
               Login
+            </button>
+            <button
+              onClick={signInWithGoogleLogin}
+              className="btn bg-transparent text-gray-500 rounded-none border-gray-300 shadow-none"
+            >
+              <FcGoogle className="text-xl" />
+              Sign in with Google
             </button>
           </div>
           <div className="text-center space-y-2 mt-3">

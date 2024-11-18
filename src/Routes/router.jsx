@@ -4,11 +4,22 @@ import Error from "../layouts/Error";
 import Login from "../Components/Login";
 import Auth from "../layouts/Auth";
 import Registration from "../Components/Registration";
+import PrivateLayout from "../layouts/PrivateLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    children: [
+      {
+        path: "/start-learning",
+        element: (
+          <PrivateLayout>
+            <h2>Start Learning</h2>
+          </PrivateLayout>
+        ),
+      },
+    ],
   },
   {
     path: "/auth",

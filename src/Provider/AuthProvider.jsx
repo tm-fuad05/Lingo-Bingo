@@ -1,10 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createContext } from "react";
-
+import auth from "../Firebase/firebase.config";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile,
+  signInWithPopup,
+} from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
+  const provider = new GoogleAuthProvider();
+  const [user, setUser] = useState();
+  const [loader, setLoader] = useState(true);
+
+  const handleCreateAccount = (email, password) => {
+    setLoader(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const handleSignIn = (email, password) => {
+    setLoader(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const handleSignInWithGoogle = () => {
+    setLoader(true);
+    return signInWithPopup(auth, provider);
+  };
+
+  const handleSignOut = () => {
+    setLoader(true);
+    return signOut(auth);
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoader(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleUpdateProfile = (profile) => {
+    return updateProfile(auth.currentUser, profile);
+  };
+
   const authInfo = {
-    name: "fuad",
+    user,
+    setUser,
+    handleCreateAccount,
+    handleSignIn,
+    handleSignOut,
+    handleUpdateProfile,
+    handleSignInWithGoogle,
   };
   return (
     <div>

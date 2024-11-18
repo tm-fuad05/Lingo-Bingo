@@ -1,14 +1,57 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../Provider/AuthProvider";
 const Registration = () => {
+  const [error, setError] = useState(null);
   const [showPass, setShowPass] = useState(false);
+  const navigate = useNavigate();
+
+  const {
+    handleCreateAccount,
+    setUser,
+    user,
+    handleUpdateProfile,
+    handleSignInWithGoogle,
+  } = useContext(AuthContext);
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const pass = e.target.pass.value;
     const photo = e.target.photo.value;
     const name = e.target.name.value;
+    const strongPassValidation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    setError("");
+
+    if (!strongPassValidation.test(pass)) {
+      setError(
+        "Password is invalid. It must have an uppercase letter, a lowercase letter, and be at least 6 characters long."
+      );
+      return;
+    }
+
+    handleCreateAccount(email, pass)
+      .then((result) => {
+        setUser(result.user);
+
+        handleUpdateProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser();
+            navigate("/");
+          })
+          .catch((error) => setError(error));
+      })
+      .catch(() => setError("This email is already used"));
+  };
+
+  const signInWithGoogleRegister = () => {
+    handleSignInWithGoogle()
+      .then((result) => {
+        setUser(result.user);
+        navigate("/");
+      })
+      .catch((error) => setError(error));
   };
 
   return (
@@ -34,7 +77,7 @@ const Registration = () => {
               <span className="label-text">Photo</span>
             </label>
             <input
-              type="email"
+              type="text"
               name="photo"
               placeholder="photo-URL"
               className="input input-bordered rounded-none"
@@ -65,6 +108,7 @@ const Registration = () => {
               required
             />
           </div>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
           <div className="flex items-center mb-4 gap-2">
             <input
               onClick={() => setShowPass(!showPass)}
@@ -76,9 +120,16 @@ const Registration = () => {
 
             <p className="text-sm">Show password</p>
           </div>
-          <div className="form-control">
-            <button className="btn bg-primary text-white rounded-none">
-              Login
+          <div className="form-control space-y-2">
+            <button className="btn bg-primary text-white rounded-none ">
+              Sign Up
+            </button>
+            <button
+              onClick={signInWithGoogleRegister}
+              className="btn bg-transparent text-gray-500 rounded-none border-gray-300 shadow-none"
+            >
+              <FcGoogle className="text-xl" />
+              Sign in with Google
             </button>
           </div>
           <div className="text-center mt-3">

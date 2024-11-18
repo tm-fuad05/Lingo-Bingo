@@ -7,9 +7,7 @@ const PrivateLayout = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
 
   if (loader) {
-    <div>
-      <Spinner></Spinner>
-    </div>;
+    return <Spinner></Spinner>;
   }
 
   if (user) {

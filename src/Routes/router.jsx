@@ -5,12 +5,17 @@ import Login from "../Components/Login";
 import Auth from "../layouts/Auth";
 import Registration from "../Components/Registration";
 import PrivateLayout from "../layouts/PrivateLayout";
+import Home from "../layouts/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
       {
         path: "/start-learning",
         element: (

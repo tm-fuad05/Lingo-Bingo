@@ -20,7 +20,9 @@ const Navbar = () => {
     <div className="shadow-md">
       <div className="w-11/12 mx-auto relative flex items-center justify-between z-50">
         <figure>
-          <img className="w-[180px]" src={logo} alt="" />
+          <Link to="/">
+            <img className="w-[180px]" src={logo} alt="" />
+          </Link>
         </figure>
         <nav
           className={`absolute  flex gap-4 flex-col bg-primary pt-10 pl-10 pr-6 w-56 min-h-screen text-white bg-opacity-95 lg:static lg:flex-row lg:bg-white lg:min-h-fit    duration-500 lg:text-black lg:w-fit lg:p-0 ${
@@ -29,23 +31,25 @@ const Navbar = () => {
         >
           <NavLink
             className={
-              "hover:text-primary  hover:bg-white hover:rounded-md hover:p-2 lg:hover:p-0 "
+              "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
             }
             to="/"
           >
             Home
           </NavLink>
+          {user && user && (
+            <NavLink
+              className={
+                "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
+              }
+              to="/start-learning"
+            >
+              Start learning
+            </NavLink>
+          )}
           <NavLink
             className={
-              "hover:text-primary  hover:bg-white hover:rounded-md hover:p-2 lg:hover:p-0 "
-            }
-            to="/start-learning"
-          >
-            Start learning
-          </NavLink>
-          <NavLink
-            className={
-              "hover:text-primary  hover:bg-white hover:rounded-md hover:p-2 lg:hover:p-0 "
+              "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
             }
             to="/tutorials"
           >
@@ -53,15 +57,25 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={
-              "hover:text-primary  hover:bg-white hover:rounded-md hover:p-2 lg:hover:p-0 "
+              "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
             }
             to="/about-us"
           >
             About Us
           </NavLink>
+          {user && user && (
+            <NavLink
+              className={
+                "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
+              }
+              to="/my-profile"
+            >
+              My Profile
+            </NavLink>
+          )}
         </nav>
         <div className="flex items-center gap-2">
-          <div>
+          <button>
             {user && user ? (
               <figure className="w-8 h-8 rounded-full p-0.5 border border-primary">
                 <img
@@ -73,7 +87,7 @@ const Navbar = () => {
             ) : (
               <FaUserCircle className="text-3xl" />
             )}
-          </div>
+          </button>
           {user && user ? (
             <button
               onClick={SignOutUser}

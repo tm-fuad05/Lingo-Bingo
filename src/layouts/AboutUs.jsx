@@ -25,7 +25,9 @@ const AboutUs = () => {
       </h3>
       <ul className="list-disc pl-10 space-y-3">
         <li className="text-gray-500 text-md lg:text-lg">
-          <span className="font-semibold text-black">nteractive Learning:</span>{" "}
+          <span className="font-semibold text-black">
+            Interactive Learning:
+          </span>{" "}
           We combine modern teaching techniques with interactive exercises to
           ensure that learning is not only effective but also enjoyable.
         </li>

@@ -75,31 +75,19 @@ const Navbar = () => {
           )}
         </nav>
         <div className="flex items-center gap-2">
-          <button>
+          <NavLink to="/my-profile/info">
             {user && user ? (
-              <div className="dropdown dropdown-bottom flex">
-                <div tabIndex={0} role="button" className="hover:opacity-60 ">
-                  <figure className="w-8 h-8 rounded-full p-0.5 border border-primary">
-                    <img
-                      className="w-full h-full rounded-full"
-                      src={user.photoURL}
-                      alt=""
-                    />
-                  </figure>
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content menu bg-base-100 rounded-box z-[1] mt-2 -ml-2 w-32 p-2 shadow "
-                >
-                  <li>
-                    <NavLink to="/my-profile">My Profile</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <figure className="w-8 h-8 rounded-full p-0.5 border border-primary hover:opacity-50">
+                <img
+                  className="w-full h-full rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </figure>
             ) : (
               <FaUserCircle className="text-3xl" />
             )}
-          </button>
+          </NavLink>
           {user && user ? (
             <button
               onClick={SignOutUser}

@@ -77,13 +77,25 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <button>
             {user && user ? (
-              <figure className="w-8 h-8 rounded-full p-0.5 border border-primary">
-                <img
-                  className="w-full h-full rounded-full"
-                  src={user.photoURL}
-                  alt=""
-                />
-              </figure>
+              <div className="dropdown dropdown-bottom flex">
+                <div tabIndex={0} role="button" className="hover:opacity-60">
+                  <figure className="w-8 h-8 rounded-full p-0.5 border border-primary">
+                    <img
+                      className="w-full h-full rounded-full"
+                      src={user.photoURL}
+                      alt=""
+                    />
+                  </figure>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                >
+                  <li>
+                    <NavLink to="/my-profile">My Profile</NavLink>
+                  </li>
+                </ul>
+              </div>
             ) : (
               <FaUserCircle className="text-3xl" />
             )}

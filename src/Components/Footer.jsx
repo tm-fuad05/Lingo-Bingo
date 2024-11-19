@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="bg-gray-200 p-10 md:p-12   p-16">
       <footer className="footer  text-base-content  ">
         <nav className="text-black">
-          <div className="flex justify-between items-center gap-2 mb-5 font-semibold">
+          <div className="flex justify-between items-center gap-2 mb-5 ">
             <img src="assets/logo.webp" alt="" />
             <img src={logo} alt="" />
           </div>

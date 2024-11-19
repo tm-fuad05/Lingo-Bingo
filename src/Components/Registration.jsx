@@ -38,7 +38,7 @@ const Registration = () => {
         handleUpdateProfile({ displayName: name, photoURL: photo })
           .then(() => {
             setUser();
-            navigate("/");
+            navigate("/auth/login");
           })
           .catch((error) => setError(error));
       })

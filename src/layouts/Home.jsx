@@ -6,20 +6,29 @@ import Banner from "../Components/Banner";
 import Features from "../Components/Features";
 import AboutSection from "../Components/AboutSection";
 import Success from "../Components/Success";
+import JoinUs from "../Components/JoinUs";
+import { Helmet } from "react-helmet";
 const Home = () => {
   useEffect(() => {
     Aos.init();
   }, []);
   return (
-    <div className="w-11/12 mx-auto">
-      <header>
+    <div>
+      <Helmet>
+        <title>Home | Lingo Bingo</title>
+      </Helmet>
+      ;
+      <header className="w-11/12 mx-auto">
         <Banner></Banner>
       </header>
-      <main>
+      <main className="w-11/12 mx-auto">
         <Features></Features>
         <AboutSection></AboutSection>
         <Success></Success>
       </main>
+      <div className="bg-[#eeedfe]">
+        <JoinUs></JoinUs>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const Banner = () => {
     });
   }, []);
   return (
-    <div className="bg-[#eeedfe]  px-5 py-10 min-h-screen flex flex-col text-center lg:flex-row lg:text-start justify-between items-center">
+    <div className="bg-[#eeedfe]  px-5 py-10 lg:min-h-screen flex flex-col gap-8 text-center lg:flex-row lg:text-start  items-center">
       <div className=" w-10/12 lg:w-7/12 space-y-4 ">
         <h1
           data-aos="fade-right"

@@ -47,14 +47,16 @@ const Navbar = () => {
               Start learning
             </NavLink>
           )}
-          <NavLink
-            className={
-              "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
-            }
-            to="/tutorials"
-          >
-            Tutorials
-          </NavLink>
+          {user && user && (
+            <NavLink
+              className={
+                "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
+              }
+              to="/tutorials"
+            >
+              Tutorials
+            </NavLink>
+          )}
           <NavLink
             className={
               "lg:hover:text-primary hover:border-b lg:hover:border-none lg:hover:p-0 "
@@ -79,7 +81,7 @@ const Navbar = () => {
             {user && user ? (
               <figure className="w-8 h-8 rounded-full p-0.5 border border-primary hover:opacity-50">
                 <img
-                  className="w-full h-full rounded-full"
+                  className="w-full h-full  object-cover rounded-full"
                   src={user.photoURL}
                   alt=""
                 />
@@ -91,7 +93,7 @@ const Navbar = () => {
           {user && user ? (
             <button
               onClick={SignOutUser}
-              className="btn btn-sm md:btn-md bg-red-400 text-white "
+              className="btn btn-sm md:btn-md bg-red-500 text-white "
             >
               Log out
             </button>

@@ -6,7 +6,9 @@ import Footer from "../Components/Footer";
 const Root = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      <div className="sticky top-0 z-50 bg-white">
+        <Navbar></Navbar>
+      </div>
       <Outlet></Outlet>
       <Footer></Footer>
     </div>

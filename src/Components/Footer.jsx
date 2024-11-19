@@ -5,9 +5,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Footer = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="bg-gray-200 p-10 md:p-12   p-16">
+    <div className="bg-[#010138] p-10 md:p-12 p-16">
       <footer className="footer  text-base-content  ">
-        <nav className="text-black">
+        <nav className=" text-white">
           <div className="flex justify-between items-center gap-2 mb-5 ">
             <img src="assets/logo.webp" alt="" />
             <img src={logo} alt="" />
@@ -19,7 +19,7 @@ const Footer = () => {
             Email: lingo_bingo_official@gmail.com
           </a>
           <a className="link link-hover">Opening hours: 9.00 AM - 5.00 PM</a>
-          <nav className="text-black">
+          <nav className=" text-white">
             <div className="grid grid-flow-col gap-4 mt-5">
               <a>
                 <svg
@@ -57,8 +57,8 @@ const Footer = () => {
             </div>
           </nav>
         </nav>
-        <nav className="text-black">
-          <h6 className="text-black text-lg font-bold mb-3">Useful links</h6>
+        <nav className=" text-white">
+          <h6 className=" text-white text-lg font-bold mb-3">Useful links</h6>
 
           <NavLink
             className={
@@ -106,7 +106,7 @@ const Footer = () => {
           )}
         </nav>
       </footer>
-      <p className="mt-5 text-center">
+      <p className="mt-5 text-center  text-gray-400">
         &copy; 2024 Lingo Bingo. All rights reserved.
       </p>
     </div>

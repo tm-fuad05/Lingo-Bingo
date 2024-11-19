@@ -8,21 +8,20 @@ const ProfileInfo = () => {
     <div className="my-20  flex flex-col-reverse gap-10 lg:flex-row  justify-between lg:items-center w-11/12 mx-auto">
       <div>
         <div className="mb-20">
-          <p className="text-4xl md:text-5xl lg:text-6xl font-bold md:mb-2 lg:mb-2">
+          <h2 className="text-4xl md:text-5xl font-bold md:mb-2 lg:mb-2">
             Hello,{" "}
-          </p>
-          <p className="text-primary ml-10 text-4xl md:text-5xl lg:text-6xl font-bold">
-            {user && user.displayName}
-          </p>
+          </h2>
+          <h2 className="text-primary ml-10 text-4xl md:text-5xl font-bold">
+            {user.displayName}
+          </h2>
         </div>
         <h3 className="text-lg lg:text-2xl font-semibold">General Info:</h3>
         <ul className="list-disc pl-8 text-md lg:text-lg">
           <li className="mt-3">
-            <span className="font-semibold">Name:</span>{" "}
-            {user && user.displayName}
+            <span className="font-semibold">Name:</span> {user.displayName}
           </li>
           <li>
-            <span className="font-semibold">Email:</span> {user && user.email}
+            <span className="font-semibold">Email:</span> {user.email}
           </li>
         </ul>
         <div className="mt-5">
@@ -37,7 +36,7 @@ const ProfileInfo = () => {
       <div className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full border-4 border-primary p-2 mx-auto lg:mx-0">
         <img
           className="w-full h-full object-cover rounded-full"
-          src={user && user.photoURL}
+          src={user.photoURL}
           alt=""
         />
       </div>

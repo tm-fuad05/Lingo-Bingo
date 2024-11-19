@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   return (
     <div className="w-11/12 mx-auto flex flex-col gap-3 my-10">
+      <Helmet>
+        <title>About Us | Lingo Bingo</title>
+      </Helmet>
       <h3 className="text-2xl lg:text-3xl text-primary font-bold">
         About Us-Lingo Bingo
       </h3>

@@ -14,7 +14,7 @@ const Success = () => {
   const [counterOn, setCounterOn] = useState(false);
   return (
     <div className="flex flex-col gap-8 mb-10">
-      <h3 className="text-heading text-2xl md:text-3xl font-bold text-center">
+      <h3 className="text-heading text-2xl md:text-4xl font-bold text-center">
         Our Success
       </h3>
       <ScrollTrigger
@@ -34,7 +34,7 @@ const Success = () => {
                 <CountUp
                   start={0}
                   end={1250}
-                  duration="4"
+                  duration="2"
                   className="text-heading text-xl lg:text-2xl font-semibold"
                 ></CountUp>
               )}
@@ -54,7 +54,7 @@ const Success = () => {
                 <CountUp
                   start={0}
                   end={60}
-                  duration="4"
+                  duration="2"
                   className="text-heading text-xl lg:text-2xl font-semibold"
                 ></CountUp>
               )}
@@ -94,7 +94,7 @@ const Success = () => {
                   <CountUp
                     start={0}
                     end={30}
-                    duration="4"
+                    duration="2"
                     className="text-heading text-xl lg:text-2xl font-semibold"
                   ></CountUp>
                 )}

@@ -8,7 +8,7 @@ const ProfileInfo = () => {
     <div className="my-20  flex flex-col-reverse gap-10 lg:flex-row  justify-between lg:items-center w-11/12 mx-auto">
       <div>
         <div className="mb-20">
-          <p className="text-6xl md:text-5xl lg:text-6xl font-bold mb-2">
+          <p className="text-4xl md:text-5xl lg:text-6xl font-bold md:mb-2 lg:mb-2">
             Hello,{" "}
           </p>
           <p className="text-primary ml-10 text-4xl md:text-5xl lg:text-6xl font-bold">

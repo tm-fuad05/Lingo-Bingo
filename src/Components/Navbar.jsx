@@ -21,11 +21,11 @@ const Navbar = () => {
       <div className="w-11/12 mx-auto relative flex items-center justify-between z-50">
         <figure>
           <Link to="/">
-            <img className="w-[180px]" src={logo} alt="" />
+            <img className="w-[180px]" src={logo} alt="Lingo Bingo" />
           </Link>
         </figure>
         <nav
-          className={`absolute  flex gap-4 flex-col bg-primary pt-10 pl-10 pr-6 w-56 min-h-screen text-white bg-opacity-95 lg:static lg:flex-row lg:bg-white lg:min-h-fit    duration-500 lg:text-black lg:w-fit lg:p-0 ${
+          className={`absolute  flex gap-4 flex-col bg-primary pt-10 pl-12 pr-10 w-64 min-h-screen text-white bg-opacity-95 lg:static lg:flex-row lg:bg-white lg:min-h-fit    duration-500 lg:text-black lg:w-fit lg:p-0 ${
             open ? "top-0 -left-11 " : "top-0 -left-96 "
           }  `}
         >
@@ -78,7 +78,7 @@ const Navbar = () => {
           <button>
             {user && user ? (
               <div className="dropdown dropdown-bottom flex">
-                <div tabIndex={0} role="button" className="hover:opacity-60">
+                <div tabIndex={0} role="button" className="hover:opacity-60 ">
                   <figure className="w-8 h-8 rounded-full p-0.5 border border-primary">
                     <img
                       className="w-full h-full rounded-full"
@@ -89,7 +89,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                  className="dropdown-content menu bg-base-100 rounded-box z-[1] mt-2 -ml-2 w-32 p-2 shadow "
                 >
                   <li>
                     <NavLink to="/my-profile">My Profile</NavLink>

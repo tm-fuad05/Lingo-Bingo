@@ -5,6 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { RiMenu4Fill } from "react-icons/ri";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { handleSignOut, user } = useContext(AuthContext);
@@ -12,8 +13,8 @@ const Navbar = () => {
 
   const SignOutUser = () => {
     handleSignOut()
-      .then(() => console.log("Sign out"))
-      .catch((error) => console.log(error));
+      .then(() => toast.success("Successfully logged out"))
+      .catch((error) => toast.error(error));
   };
 
   return (

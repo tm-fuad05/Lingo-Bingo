@@ -15,7 +15,6 @@ const ForgotPass = () => {
       })
       .catch((error) => {
         setError("Something went wrong");
-        console.log(error);
       });
   };
 

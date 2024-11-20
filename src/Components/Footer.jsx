@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import logo from "../assets/Zone.png";
+import logo from "../assets/Zone_footer.png";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 const Footer = () => {
@@ -78,14 +78,16 @@ const Footer = () => {
               Start learning
             </NavLink>
           )}
-          <NavLink
-            className={
-              "  hover:text-primary     hover:border-none   hover:p-0 "
-            }
-            to="/tutorials"
-          >
-            Tutorials
-          </NavLink>
+          {user && user && (
+            <NavLink
+              className={
+                "  hover:text-primary     hover:border-none   hover:p-0 "
+              }
+              to="/tutorials"
+            >
+              Tutorials
+            </NavLink>
+          )}
           <NavLink
             className={
               "  hover:text-primary     hover:border-none   hover:p-0 "

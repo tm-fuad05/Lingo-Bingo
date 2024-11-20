@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TiTick } from "react-icons/ti";
 import { FaBookOpen } from "react-icons/fa";
 import { GiNetworkBars } from "react-icons/gi";
 import { FaFaceSmileWink } from "react-icons/fa6";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const JoinUs = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <div className="flex flex-col gap-5 mt-16 py-12 w-11/12 mx-auto">
       <h3 className="text-2xl lg:text-4xl text-heading font-bold mb-5">
         Why You Should Learn With Lingo Bingo?
       </h3>
       {/* Cards */}
-      <div className="flex gap-3 items-center bg-gray-50 p-4 rounded-md">
+      <div
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        data-aos="fade-right"
+      >
         <div className="bg-[#e6e5ff] p-3 rounded-full">
           <TiTick className="text-2xl lg:text-4xl text-[#a5a3ef]" />
         </div>
@@ -22,7 +31,10 @@ const JoinUs = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-3 items-center bg-gray-50 p-4 rounded-md">
+      <div
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        data-aos="fade-right"
+      >
         <div className="bg-green-200 p-3 rounded-full">
           <FaBookOpen className="text-2xl lg:text-4xl text-green-500" />
         </div>
@@ -34,7 +46,10 @@ const JoinUs = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-3 items-center bg-gray-50 p-4 rounded-md">
+      <div
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        data-aos="fade-right"
+      >
         <div className="bg-[#fff4df] p-3 rounded-full">
           <GiNetworkBars className="text-2xl lg:text-4xl text-[#ffb86c]" />
         </div>
@@ -46,7 +61,10 @@ const JoinUs = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-3 items-center bg-gray-50 p-4 rounded-md">
+      <div
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        data-aos="fade-right"
+      >
         <div className="bg-sky-100 p-3 rounded-full">
           <FaFaceSmileWink className="text-2xl lg:text-4xl text-sky-500" />
         </div>

@@ -9,8 +9,8 @@ const Tutorial = () => {
       <Helmet>
         <title>Tutorial | Lingo Bingo</title>
       </Helmet>
-      <div className="bg-[#eeedfe] min-h-32 flex gap-2 justify-center items-center">
-        <h2 className="text-2xl lg:text-4xl font-bold text-heading">
+      <div className="bg-[#eeedfe] min-h-32 flex flex-col md:flex-row gap-2 justify-center items-center">
+        <h2 className="text-2xl lg:text-4xl font-bold text-heading text-center">
           Here are some free tutorial Videos
         </h2>
         <FaAnglesDown className="text-2xl lg:text-3xl" />

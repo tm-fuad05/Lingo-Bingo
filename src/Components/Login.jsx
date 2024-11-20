@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
@@ -9,6 +9,7 @@ const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const emailRef = useRef();
   const { handleSignIn, setUser, user, handleSignInWithGoogle } =
     useContext(AuthContext);
   const handleLogin = (e) => {
@@ -33,6 +34,12 @@ const Login = () => {
       .catch((error) => setError(error));
   };
 
+  const goToReset = () => {
+    if (emailRef.current.value) {
+      navigate("/auth/forgot-password");
+    }
+  };
+
   return (
     <div className="min-h-screen flex justify-center items-center bg-primary bg-opacity-60">
       <div className="card bg-base-100 w-full max-w-sm lg:max-w-lg shrink-0 shadow-2xl rounded-none">
@@ -47,6 +54,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="email"
+              ref={emailRef}
               className="input input-bordered rounded-none"
               required
             />
@@ -88,9 +96,13 @@ const Login = () => {
           <div className="text-center space-y-2 mt-3">
             <p>
               Forgot{" "}
-              <a className="text-primary hover:opacity-50" href="#">
+              <button
+                onClick={goToReset}
+                className="text-primary hover:opacity-50"
+                href="#"
+              >
                 Password
-              </a>
+              </button>
               ?
             </p>
             <p>

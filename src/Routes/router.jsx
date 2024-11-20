@@ -14,6 +14,8 @@ import Tutorial from "../layouts/Tutorial";
 import Japan from "../Components/Category Video/Japan";
 import Korea from "../Components/Category Video/Korea";
 import Hindi from "../Components/Category Video/Hindi";
+import ForgotPass from "../Components/ForgotPass";
+import StartLearning from "../layouts/StartLearning";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +30,10 @@ const router = createBrowserRouter([
         path: "/start-learning",
         element: (
           <PrivateLayout>
-            <h2>Start Learning</h2>
+            <StartLearning></StartLearning>
           </PrivateLayout>
         ),
+        loader: () => fetch("../lesson.json"),
       },
       {
         path: "/tutorials",
@@ -97,6 +100,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/signup",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/auth/forgot-password",
+        element: <ForgotPass></ForgotPass>,
       },
     ],
   },

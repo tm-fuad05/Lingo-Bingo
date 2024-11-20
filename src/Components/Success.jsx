@@ -34,7 +34,7 @@ const Success = () => {
                 <CountUp
                   start={0}
                   end={1250}
-                  duration="2"
+                  duration="3"
                   className="text-heading text-xl lg:text-2xl font-semibold"
                 ></CountUp>
               )}
@@ -54,7 +54,7 @@ const Success = () => {
                 <CountUp
                   start={0}
                   end={60}
-                  duration="2"
+                  duration="3"
                   className="text-heading text-xl lg:text-2xl font-semibold"
                 ></CountUp>
               )}
@@ -94,7 +94,7 @@ const Success = () => {
                   <CountUp
                     start={0}
                     end={30}
-                    duration="2"
+                    duration="3"
                     className="text-heading text-xl lg:text-2xl font-semibold"
                   ></CountUp>
                 )}

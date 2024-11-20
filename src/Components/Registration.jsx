@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Provider/AuthProvider";
+
 const Registration = () => {
   const [error, setError] = useState(null);
   const [showPass, setShowPass] = useState(false);
@@ -14,7 +15,7 @@ const Registration = () => {
     handleUpdateProfile,
     handleSignInWithGoogle,
   } = useContext(AuthContext);
-
+  console.log(user);
   const handleSignUp = (e) => {
     e.preventDefault();
     const email = e.target.email.value;

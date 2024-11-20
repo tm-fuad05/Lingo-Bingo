@@ -17,8 +17,7 @@ const Home = () => {
       <Helmet>
         <title>Home | Lingo Bingo</title>
       </Helmet>
-      ;
-      <header className="w-11/12 mx-auto">
+      <header>
         <Banner></Banner>
       </header>
       <main className="w-11/12 mx-auto">

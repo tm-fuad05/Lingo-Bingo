@@ -11,11 +11,6 @@ const LessonCards = ({ vocabulary }) => {
     example,
   } = vocabulary;
 
-  const handleModal = (id) => {
-    document.getElementById("when_to_say").showModal(id);
-    console.log(id);
-  };
-
   return (
     <div className="bg-secondary p-7 rounded-xl flex flex-col items-center justify-center gap-2">
       <h4 className="font-semibold text-md md:text-lg lg:text-xl">
@@ -48,12 +43,12 @@ const LessonCards = ({ vocabulary }) => {
       </h4>
       <div>
         <button
-          onClick={() => handleModal(id)}
+          onClick={() => document.getElementById(`${id}`).showModal()}
           className="btn bg-primary border-none text-white mt-3"
         >
           When to say
         </button>
-        <dialog id="when_to_say" className="modal">
+        <dialog id={`${id}`} className="modal">
           <div className="modal-box  bg-gray-200 flex flex-col gap-2 lg:w-7/12 p-8">
             <h4 className="font-semibold text-md md:text-lg lg:text-xl">
               Word:

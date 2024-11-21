@@ -4,7 +4,6 @@ import { FaAnglesDown } from "react-icons/fa6";
 import { FaAnglesRight } from "react-icons/fa6";
 const StartLearning = () => {
   const lessons = useLoaderData();
-  console.log(lessons);
 
   return (
     <div>
@@ -26,10 +25,10 @@ const StartLearning = () => {
             <p>Vocabularies & Grammars </p>
             <div>
               <Link
-                to={`/start-learning/${lesson.lesson_no}`}
+                to={`/lessons/${lesson.lesson_no}`}
                 className="btn bg-primary text-white border-none"
               >
-                Learn More <FaAnglesRight />
+                View Vocabularies <FaAnglesRight />
               </Link>
             </div>
           </div>

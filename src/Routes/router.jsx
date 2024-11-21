@@ -16,6 +16,7 @@ import Korea from "../Components/Category Video/Korea";
 import Hindi from "../Components/Category Video/Hindi";
 import ForgotPass from "../Components/ForgotPass";
 import StartLearning from "../layouts/StartLearning";
+import Lessons from "../layouts/Lessons";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
           </PrivateLayout>
         ),
         loader: () => fetch("../lesson.json"),
+      },
+      {
+        path: "/lessons/:lesson_no",
+        element: (
+          <PrivateLayout>
+            <Lessons></Lessons>
+          </PrivateLayout>
+        ),
+        loader: () => fetch("../languages.json"),
       },
       {
         path: "/tutorials",

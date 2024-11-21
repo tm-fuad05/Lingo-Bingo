@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 const Banner = () => {
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     Aos.init({
       duration: 1500,
@@ -66,16 +68,16 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="w-8/12  lg:min-h-screen flex flex-col gap-5 text-center  lg:text-start  items-center absolute top-0 right-1/2 translate-x-1/2 translate-y-1/2 md:translate-y-1/2 lg:translate-y-1/4">
+      <div className="w-9/12  lg:min-h-screen flex flex-col gap-5 text-center  lg:text-start  items-center absolute top-0 right-1/2 translate-x-1/2 translate-y-1/2 md:translate-y-1/2 lg:translate-y-1/4">
         <h1
           data-aos="fade-right"
-          className="text-3xl md:text-4xl lg:text-5xl leading-tight lg:leading-normal  font-bold text-gray-200 text-center "
+          className="text-4xl  lg:text-6xl leading-tight lg:leading-snug  font-semibold text-gray-200 text-center "
         >
           Unlock New Languages: Learn, Practice, Connect!
         </h1>
         <p
           data-aos="fade-left"
-          className=" text-sm md:text-md lg:text-md text-center  text-white"
+          className=" text-sm md:text-md lg:text-md text-center font-light  text-white"
         >
           Discover the joy of language learning with interactive lessons,
           real-life examples, and practical tips. Build your skills step by
@@ -84,7 +86,7 @@ const Banner = () => {
         </p>
         <div data-aos="fade-right" className="w-fit mx-auto lg:mx-0 ">
           <Link
-            to="/start-learning"
+            to={user && user ? "/start-learning" : "/auth/login"}
             className="rounded-lg bg-primary text-white hover:translate-y-[-10px] duration-300 transition-all flex p-3"
           >
             <IoIosArrowRoundForward className="text-2xl" /> Let's learn

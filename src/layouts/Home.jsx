@@ -25,7 +25,7 @@ const Home = () => {
         <AboutSection></AboutSection>
         <Success></Success>
       </main>
-      <div className="bg-[#eeedfe]">
+      <div className="bg-secondary">
         <JoinUs></JoinUs>
       </div>
     </div>

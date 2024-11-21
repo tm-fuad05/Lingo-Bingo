@@ -12,12 +12,12 @@ const JoinUs = () => {
 
   return (
     <div className="flex flex-col gap-5 mt-16 py-12 w-11/12 mx-auto">
-      <h3 className="text-2xl lg:text-4xl text-heading font-bold mb-5">
+      <h3 className="text-2xl lg:text-4xl text-primary font-semibold mb-5">
         Why You Should Learn With Lingo Bingo?
       </h3>
       {/* Cards */}
       <div
-        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md shadow-md shadow-md"
         data-aos="fade-right"
       >
         <div className="bg-[#e6e5ff] p-3 rounded-full">
@@ -32,7 +32,7 @@ const JoinUs = () => {
         </div>
       </div>
       <div
-        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md shadow-md"
         data-aos="fade-right"
       >
         <div className="bg-green-200 p-3 rounded-full">
@@ -47,7 +47,7 @@ const JoinUs = () => {
         </div>
       </div>
       <div
-        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md shadow-md"
         data-aos="fade-right"
       >
         <div className="bg-[#fff4df] p-3 rounded-full">
@@ -62,7 +62,7 @@ const JoinUs = () => {
         </div>
       </div>
       <div
-        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md"
+        className="flex gap-3 items-center bg-gray-50 p-4 rounded-md shadow-md"
         data-aos="fade-right"
       >
         <div className="bg-sky-100 p-3 rounded-full">

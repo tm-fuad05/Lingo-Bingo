@@ -14,7 +14,7 @@ const Success = () => {
   const [counterOn, setCounterOn] = useState(false);
   return (
     <div className="flex flex-col gap-8 mb-10">
-      <h3 className="text-heading text-2xl md:text-4xl font-bold text-center">
+      <h3 className="text-primary text-2xl md:text-4xl font-bold text-center">
         Our Success
       </h3>
       <ScrollTrigger

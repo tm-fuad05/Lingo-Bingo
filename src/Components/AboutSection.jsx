@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 const AboutSection = () => {
   return (
     <div className="space-y-4 mb-10">
-      <h3 className="text-heading text-2xl md:text-4xl font-bold">About Us</h3>
+      <h3 className="text-primary text-2xl md:text-4xl font-bold">About Us</h3>
       <p className="text-gray-500">
         At <strong>Lingo Bingo</strong>, we’re on a mission to make learning
         Korean, Japanese, and Hindi vocabulary both fun and effective. We

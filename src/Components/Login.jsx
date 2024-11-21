@@ -10,12 +10,13 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const emailRef = useRef();
-  const { handleSignIn, setUser, user, handleSignInWithGoogle } =
+  const { handleSignIn, setUser, handleSignInWithGoogle } =
     useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const pass = e.target.pass.value;
+
     setError("");
     handleSignIn(email, pass)
       .then((result) => {

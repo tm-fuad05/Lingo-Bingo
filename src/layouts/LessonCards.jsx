@@ -1,5 +1,5 @@
 import React from "react";
-
+import { HiOutlineSpeakerWave } from "react-icons/hi2";
 const LessonCards = ({ vocabulary }) => {
   const {
     word,
@@ -11,15 +11,27 @@ const LessonCards = ({ vocabulary }) => {
     example,
   } = vocabulary;
 
+  function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "ja-JP";
+    window.speechSynthesis.speak(utterance);
+    console.log(word);
+  }
+
   return (
-    <div className="bg-secondary p-7 rounded-xl flex flex-col items-center justify-center gap-2">
-      <h4 className="font-semibold text-md md:text-lg lg:text-xl">
-        Word:
-        <span className="text-md md:text-lg lg:text-xl font-normal">
-          {" "}
-          {word}{" "}
-        </span>
-      </h4>
+    <div className="bg-secondary p-7 rounded-xl flex flex-col  justify-center gap-2  hover:-translate-y-4 hover:bg-opacity-50 duration-500">
+      <div className="flex justify-between items-center">
+        <h4 className="font-semibold text-md md:text-lg lg:text-xl ">
+          Word:
+          <span className="text-md md:text-lg lg:text-xl font-normal ">
+            {" "}
+            {word}
+          </span>
+        </h4>
+        <button onClick={() => pronounceWord(word)}>
+          <HiOutlineSpeakerWave className="text-xl lg:text-2xl hover:opacity-50" />
+        </button>
+      </div>
       <h4 className="font-semibold text-md md:text-lg lg:text-xl">
         Meaning:
         <span className="text-md md:text-lg lg:text-xl font-normal">

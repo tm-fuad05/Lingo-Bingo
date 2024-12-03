@@ -10,7 +10,6 @@ const Lessons = () => {
   const lessonNo = parseInt(lessonNoStr.lesson_no);
 
   const vocabularies = data.filter((data) => data.lesson_no === lessonNo);
-  console.log(vocabularies);
 
   return (
     <div>

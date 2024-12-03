@@ -16,8 +16,6 @@ const Registration = () => {
     handleSignInWithGoogle,
   } = useContext(AuthContext);
 
-  console.log(user);
-
   const handleSignUp = (e) => {
     e.preventDefault();
     const email = e.target.email.value;

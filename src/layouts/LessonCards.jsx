@@ -15,7 +15,6 @@ const LessonCards = ({ vocabulary }) => {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = "ja-JP";
     window.speechSynthesis.speak(utterance);
-    console.log(word);
   }
 
   return (

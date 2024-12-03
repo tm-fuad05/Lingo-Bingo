@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import LessonCards from "./LessonCards";
 import { FaAnglesDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Lessons = () => {
   const data = useLoaderData();
@@ -23,6 +24,14 @@ const Lessons = () => {
         {vocabularies.map((vocabulary) => (
           <LessonCards vocabulary={vocabulary}></LessonCards>
         ))}
+      </div>
+      <div className="w-fit mx-auto mb-10">
+        <Link
+          className="btn bg-primary btn-sm md:btn-md text-white"
+          to="/start-learning"
+        >
+          Back to Lesson
+        </Link>
       </div>
     </div>
   );

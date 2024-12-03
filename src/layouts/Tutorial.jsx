@@ -1,8 +1,10 @@
 import React from "react";
 import { FaAnglesDown } from "react-icons/fa6";
-import YoutubeVideos from "../Components/YoutubeVideos";
+
 import { Link, Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Videos from "../Components/Category Video/Videos";
+
 const Tutorial = () => {
   return (
     <div>
@@ -15,9 +17,10 @@ const Tutorial = () => {
         </h2>
         <FaAnglesDown className="text-2xl lg:text-3xl text-white" />
       </div>
-      <YoutubeVideos></YoutubeVideos>
+      {/* <YoutubeVideos></YoutubeVideos> */}
       <div className="w-11/12 mx-auto ">
-        <Outlet></Outlet>
+        {/* <Outlet></Outlet> */}
+        <Videos></Videos>
         <div className="w-fit mx-auto mb-10">
           <Link
             className="btn bg-primary btn-sm md:btn-md text-white"

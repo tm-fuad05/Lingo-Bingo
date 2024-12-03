@@ -16,7 +16,7 @@ const PrivateLayout = ({ children }) => {
 
   return (
     <div>
-      <Navigate to="/"></Navigate>
+      <Navigate to="/auth/login"></Navigate>
     </div>
   );
 };

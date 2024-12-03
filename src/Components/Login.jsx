@@ -100,7 +100,6 @@ const Login = () => {
               <button
                 onClick={goToReset}
                 className="text-primary hover:opacity-50"
-                href="#"
               >
                 Password
               </button>

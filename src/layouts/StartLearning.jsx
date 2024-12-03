@@ -34,6 +34,31 @@ const StartLearning = () => {
           </div>
         ))}
       </div>
+      <div>
+        <h2 className="text-primary  text-2xl lg:text-4xl font-bold  text-center mb-8">
+          Getting Started Videos
+        </h2>
+        <div className="video-container w-11/12 mx-auto mb-10">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/z4qh8BVrb3w?si=Fjepa-jEf-un4Pzl"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div className="w-fit mx-auto mb-10">
+          <Link
+            className="btn bg-primary btn-sm md:btn-md text-white"
+            to="/tutorials"
+          >
+            View More Tutorials
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

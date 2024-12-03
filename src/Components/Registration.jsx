@@ -15,7 +15,9 @@ const Registration = () => {
     handleUpdateProfile,
     handleSignInWithGoogle,
   } = useContext(AuthContext);
+
   console.log(user);
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -34,12 +36,10 @@ const Registration = () => {
 
     handleCreateAccount(email, pass)
       .then((result) => {
-        setUser(result.user);
-
         handleUpdateProfile({ displayName: name, photoURL: photo })
           .then(() => {
-            setUser();
-            navigate("/auth/login");
+            setUser(result.user);
+            navigate("/");
           })
           .catch((error) => setError(error));
       })

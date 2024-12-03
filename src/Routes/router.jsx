@@ -11,9 +11,7 @@ import ProfileInfo from "../layouts/ProfileInfo";
 import UpdateInfo from "../Components/UpdateInfo";
 import AboutUs from "../layouts/AboutUs";
 import Tutorial from "../layouts/Tutorial";
-import Japan from "../Components/Category Video/Japan";
-import Korea from "../Components/Category Video/Korea";
-import Hindi from "../Components/Category Video/Hindi";
+
 import ForgotPass from "../Components/ForgotPass";
 import StartLearning from "../layouts/StartLearning";
 import Lessons from "../layouts/Lessons";
@@ -52,24 +50,6 @@ const router = createBrowserRouter([
             <Tutorial></Tutorial>
           </PrivateLayout>
         ),
-        children: [
-          {
-            path: "/tutorials",
-            element: <Navigate to="/tutorials/japanese"></Navigate>,
-          },
-          {
-            path: "/tutorials/japanese",
-            element: <Japan></Japan>,
-          },
-          {
-            path: "/tutorials/korean",
-            element: <Korea></Korea>,
-          },
-          {
-            path: "/tutorials/hindi",
-            element: <Hindi></Hindi>,
-          },
-        ],
       },
       {
         path: "/about-us",

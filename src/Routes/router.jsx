@@ -1,20 +1,19 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../layouts/Root";
-import Error from "../layouts/Error";
-import Login from "../Components/Login";
+import Error from "../pages/Error";
+import Login from "../pages/auth/Login";
 import Auth from "../layouts/Auth";
-import Registration from "../Components/Registration";
+import Registration from "../pages/auth/Registration";
 import PrivateLayout from "../layouts/PrivateLayout";
-import Home from "../layouts/Home";
-import MyProfile from "../layouts/MyProfile";
-import ProfileInfo from "../layouts/ProfileInfo";
+import Home from "../pages/Home";
+import MyProfile from "../pages/MyProfile";
+import ProfileInfo from "../Components/ProfileInfo";
 import UpdateInfo from "../Components/UpdateInfo";
-import AboutUs from "../layouts/AboutUs";
-import Tutorial from "../layouts/Tutorial";
-
-import ForgotPass from "../Components/ForgotPass";
-import StartLearning from "../layouts/StartLearning";
-import Lessons from "../layouts/Lessons";
+import AboutUs from "../pages/AboutUs";
+import Tutorial from "../pages/Tutorial";
+import ForgotPass from "../pages/auth/ForgotPass";
+import StartLearning from "../pages/StartLearning";
+import Lessons from "../pages/Lessons";
 
 const router = createBrowserRouter([
   {

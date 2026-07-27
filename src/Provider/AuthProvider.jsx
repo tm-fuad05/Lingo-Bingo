@@ -10,10 +10,21 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-export const AuthContext = createContext();
+
+export const AuthContext = createContext({
+  user: null,
+  setUser: () => {},
+  handleCreateAccount: async () => {},
+  handleSignIn: async () => {},
+  handleSignOut: async () => {},
+  handleUpdateProfile: async () => {},
+  handleSignInWithGoogle: async () => {},
+  loader: false,
+});
+
 const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
 
   const handleCreateAccount = (email, password) => {
@@ -37,15 +48,26 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoader(false);
-    });
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (currentUser) => {
+        setUser(currentUser);
+        setLoader(false);
+      },
+      (error) => {
+        console.error("Auth state change error:", error);
+        setLoader(false);
+      },
+    );
 
     return () => unsubscribe();
   }, []);
 
   const handleUpdateProfile = (profile) => {
+    if (!auth.currentUser) {
+      return Promise.resolve();
+    }
+
     return updateProfile(auth.currentUser, profile);
   };
 
@@ -60,9 +82,7 @@ const AuthProvider = ({ children }) => {
     loader,
   };
   return (
-    <div>
-      <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
-    </div>
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };
 

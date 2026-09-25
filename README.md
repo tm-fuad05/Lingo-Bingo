@@ -6,7 +6,7 @@ Lingo Bingo is an interactive web application designed to help users expand thei
 
 ## 🚀 **Live URL**
 
-**https://lingo-bingo-eb946.web.app/** 
+**https://lingo-bingo-seven.vercel.app/** 
 
 ---
 
